@@ -1,12 +1,25 @@
-import * as React from 'react';
-import { View, Text } from 'react-native';
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 
 // Pantalla de Perfil, accesible desde la pestaña de "Profile"
-export default function ProfileScreen() {
+const ProfileScreen = () => {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      {/* Contenido simple de la pantalla Profile */}
-      <Text>Pantalla de Perfil (ProfileScreen)</Text>
+    <View style={styles.container}>
+      <Text style={styles.text}>Pantalla de Perfil (ProfileScreen)</Text>
     </View>
   );
-}
+};
+
+// Estilos
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text: {
+    fontSize: 18,
+  },
+});
+
+export default ProfileScreen;

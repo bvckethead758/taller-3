@@ -1,17 +1,34 @@
-import * as React from 'react';
-import { View, Text } from 'react-native';
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 
-// El parámetro 'route' contiene información sobre la ruta actual y los parámetros pasados
-// En este caso, 'route.params' contiene los parámetros enviados desde 'HomeScreen'
 export default function DetailsScreen({ route }) {
-  // Desestructuramos 'message' de 'route.params'
   const { message } = route.params;
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Detalles Screen</Text>
-      {/* Mostramos el mensaje que recibimos desde 'HomeScreen' */}
-      <Text>{message}</Text>
+    <View style={styles.container}>
+      <Text style={styles.header}>Detalles Screen</Text>
+      <Text style={styles.message}>{message}</Text>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    backgroundColor: '#f5f5f5',
+  },
+  header: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
+    color: '#333',
+  },
+  message: {
+    fontSize: 18,
+    color: '#666',
+    textAlign: 'center',
+  },
+});

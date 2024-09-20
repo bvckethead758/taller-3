@@ -1,12 +1,25 @@
-import * as React from 'react';
-import { View, Text } from 'react-native';
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 
-// Esta pantalla puede recibir el objeto 'navigation', aunque no es necesario para este ejemplo
-export default function SettingsScreen() {
+// Pantalla de Configuraciones
+const SettingsScreen = () => {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      {/* Contenido simple de la pantalla Settings */}
-      <Text>Pantalla de Configuraciones (SettingsScreen)</Text>
+    <View style={styles.container}>
+      <Text style={styles.text}>Pantalla de Configuraciones (SettingsScreen)</Text>
     </View>
   );
-}
+};
+
+// Estilos
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text: {
+    fontSize: 18,
+  },
+});
+
+export default SettingsScreen;
